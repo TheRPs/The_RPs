@@ -18,7 +18,7 @@ body {
         rgba(0, 0, 0, 0.6),
         rgba(255, 255, 0,0.4)
     ),
-    url("/Fotos/fotoprincipal.jpeg");
+    url("Fotos/fotoprincipal.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -855,5 +855,5 @@ body {
 /* FONDO */
 body {
     background-color: #0f1a20 !important;
-    background: url("/Fotos/logoFondo.png") repeat center/ 200px 200px;
+    background: url("Fotos/logoFondo.png") repeat center/ 200px 200px;
 }
