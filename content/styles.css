@@ -1,0 +1,859 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* BODY */
+body {
+    background-color: #0f1a20;
+    color: white;
+}
+
+/* HEADER */
+.header {
+    height: 100vh;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.6),
+        rgba(255, 255, 0,0.4)
+    ),
+    url("Fotos/fotoprincipal.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.menu .btn {
+    border: 1px solid white;
+    padding: 5px 10px;
+}
+
+/* HERO */
+.hero {
+    position: absolute;
+    top: 40%;
+    left: 50px;
+}
+
+.logo-concierto {
+    width: 150px;
+    max-width: 99%;
+    height: auto;
+    margin-bottom: 10px;
+    filter: drop-shadow(2px 2px 10px rgba(0,0,0,0.5));
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.btn-hero {
+    background: transparent;
+    border: 1px solid white;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+}
+
+/* PRENSA */
+.prensa {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.prensa h3 {
+    margin-bottom: 40px;
+    font-size: 24px;
+}
+
+.contenedor-prensa {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* TARJETAS */
+.card-prensa {
+    width: 300px;
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.card-prensa img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.info-prensa {
+    padding: 15px;
+    text-align: left;
+}
+
+.info-prensa h4 {
+    color: #ffcc00;
+    margin-bottom: 8px;
+}
+
+.info-prensa p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* HOVER PRO */
+.card-prensa:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+}
+
+.card-prensa:hover img {
+    transform: scale(1.05);
+}
+
+.redes-sociales {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: black;
+}
+
+.contenedor-iconos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.red-link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 40px;
+    border: 3px solid #333;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.red-link:hover {
+    background-color: #333;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* MERCH */
+.merch-header {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.merch-header h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.merch-header p {
+    opacity: 0.8;
+}
+
+.merch-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+/* TARJETAS */
+.product-card {
+    background: #111;
+    border-radius: 12px;
+    width: 260px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.product-img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.product-info h3 {
+    margin-bottom: 10px;
+}
+
+.price {
+    color: #ffcc00;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn-buy {
+    background: #ffcc00;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-buy:hover {
+    background: #ffaa00;
+}
+
+.red-link:hover {
+    background-color: #333;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* HEADER MERCH */
+.header-merch {
+    height: 50vh;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.6),
+        rgba(255, 255, 0,0.4)
+    ),
+    url("Fotos/fotoprincipal.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.header-merch .hero {
+    position: absolute;
+    top: 40%;
+    left: 50px;
+}
+
+.header-merch .hero h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.header-merch .hero p {
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+/* MERCH CONTAINER */
+.merch-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 20px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    background: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-img {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-info h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+.btn-buy {
+    background: transparent;
+    border: 1px solid white;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-buy:hover {
+    background: white;
+    color: #0f1a20;
+}
+
+/* CONÓCENOS */
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.conocenos {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 3rem 2rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.conocenos h2 {
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, #ffd700, #ffed4a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.conocenos p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    padding: 5rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.member-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(42, 42, 42, 1));
+    border-radius: 25px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.member-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ffd700, #ffed4a);
+}
+
+.member-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 35px 70px rgba(255, 215, 0, 0.3);
+}
+
+.side-img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.side-img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.member-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+    border: 2px solid #ffd700;
+    flex-shrink: 0;
+}
+
+.member-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.member-article h3 {
+    font-size: 1.8rem;
+    background: linear-gradient(45deg, #ffd700, #ffed4a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.member-article p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    opacity: 0.95;
+}
+
+.footer {
+    text-align: center;
+    padding: 2.5rem 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    margin-top: 3rem;
+}
+
+.footer p {
+    margin-bottom: 0.5rem;
+}
+
+.footer a {
+    color: #ffd700;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #ffed4a;
+    text-decoration: underline;
+}
+
+.separator {
+    width: 80%;
+    height: 1px;
+    background-color: #000000;
+    margin: 2rem auto;
+    border: #333 solid 10px;
+    font-size: larger;
+}
+
+.programmer-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+    border: 4px solid #ffd700;
+    margin-top: 2rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .header { height: 50vh; background-position: top; }
+    .header-merch { height: 45vh; background-position: top; }
+    .header-merch .hero { top: 50%; left: 20px; }
+    .header-merch .hero h1 { font-size: 2.5rem; }
+    .hero { top: 30%; left: 20px; font-size: smaller; }
+    .members-grid { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+    .contenedor-iconos { flex-direction: column; gap: 15px; }
+    .conocenos { margin: 2rem 1rem; padding: 2.5rem 1.5rem; }
+}
+
+@media (max-width: 768px) {
+    .header { height: 40vh; background-position: top; }
+    .header-merch { height: 35vh; background-position: top; }
+    .header-merch .hero { top: 45%; left: 20px; }
+    .header-merch .hero h1 { font-size: 2rem; }
+    .members-grid { grid-template-columns: 1fr; padding: 3rem 1rem; gap: 2rem; }
+    .member-card { flex-direction: column; gap: 1.5rem; padding: 2rem; }
+    .conocenos { margin: 2rem 1rem; padding: 2.5rem 1.5rem; }
+    .conocenos h2 { font-size: 2rem; }
+    .hero { top: 20%; left: 20px; font-size: smaller; }
+    .contenedor-iconos { flex-direction: column; gap: 15px; }
+}
+
+@media (max-width: 480px) {
+    .header { height: 30vh; background-position: top; }
+    .header-merch { height: 25vh; background-position: top; }
+    .header-merch .hero { top: 60%; left: 15px; }
+    .header-merch .hero h1 { font-size: 1rem; }
+    .hero { top: 12%; left: 15px; font-size: 14px; }
+    .hero img { width: 50px; height: auto; }
+    .navbar { padding: 15px 20px; flex-direction: column; gap: 1rem; }
+    .logo { font-size: 24px; }
+    .menu { gap: 15px; }
+    .contenedor-iconos { flex-direction: column; gap: 15px; }
+    .conocenos { margin: 2rem 1rem; top: 2rem; padding: 2.5rem 1.5rem; }
+    .conocenos h2 { font-size: 1.5rem; }
+    .conocenos p { font-size: 0.9rem; }
+}
+
+/* CALENDARIO (Conciertos) */
+
+.eventos-proximos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.evento {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.calendario-page {
+    padding: 40px 20px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.calendario-page h2 { margin-bottom: 10px; text-align: center; }
+
+.calendario-wrap {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 16px;
+    align-items: start;
+}
+
+.calendario-header {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 18px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+}
+
+.calendario-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.calendario-titulo {
+    min-width: 160px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.btn-cal {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    color: white;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-cal:hover { border-color: #ffd700; transform: translateY(-1px); }
+
+.calendario-grid {
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    padding: 16px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+}
+
+.dia-nombre {
+    text-align: center;
+    font-weight: 700;
+    opacity: 0.85;
+    padding: 6px 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+}
+
+.calendario-dias {
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    padding: 0 16px 16px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 16px;
+    margin-top: -8px;
+    backdrop-filter: blur(10px);
+}
+
+.dia {
+    height: 72px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(17,17,17,0.3);
+    cursor: pointer;
+    color: white;
+    padding: 8px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+}
+
+.dia-empty {
+    border: 1px dashed rgba(255,255,255,0.08);
+    background: transparent;
+    cursor: default;
+    backdrop-filter: blur(10px);
+}
+
+.dia:hover { border-color: rgba(255,215,0,0.45); transform: translateY(-1px); }
+
+.dia-selected { border-color: #ffd700; background: rgba(255, 215, 0, 0.08); }
+
+.dia-num { font-weight: 700; font-size: 14px; }
+
+.dia-dots {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #ffd700;
+    display: inline-block;
+}
+
+.dot-more {
+    font-size: 11px;
+    opacity: 0.9;
+    color: #ffd700;
+}
+
+.calendario-panel {
+    grid-column: 2;
+    padding: 18px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+}
+
+.eventos-list { margin-top: 12px; display: flex; flex-direction: column; gap: 10px; }
+
+.evento-item {
+    padding: 12px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: rgba(10,10,10,0.25);
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.evento-title { font-weight: 700; margin-bottom: 6px; }
+
+.evento-meta, .evento-desc { font-size: 13px; opacity: 0.9; }
+
+.meta-label { color: #ffd700; font-weight: 700; }
+
+.evento-actions { display: flex; align-items: flex-start; }
+
+.btn-del {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.25);
+    color: white;
+    border-radius: 12px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.btn-del:hover { border-color: #ff5b5b; color: #ffb3b3; }
+
+.evento-empty { padding: 12px; border-radius: 14px; border: 1px dashed rgba(255,255,255,0.2); opacity: 0.9; }
+
+.evento-form {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.10);
+    backdrop-filter: blur(10px);
+}
+
+.evento-form h4 { margin-bottom: 10px; }
+
+.evento-form form { display: grid; gap: 10px; }
+
+.evento-form label { display: grid; gap: 6px; }
+
+.evento-form span { font-size: 12px; opacity: 0.9; font-weight: 700; }
+
+.evento-form input, .evento-form textarea {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(0,0,0,0.25);
+    color: white;
+    padding: 10px;
+    outline: none;
+}
+
+.evento-form input:focus, .evento-form textarea:focus {
+    border-color: #ffd700;
+}
+
+.form-actions { display: flex; justify-content: flex-end; }
+
+.btn-save {
+    background: #ffd700;
+    border: none;
+    color: #0f1a20;
+    padding: 10px 14px;
+    border-radius: 14px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.btn-save:hover { background: #ffed4a; }
+
+.calendario-note { margin-top: 10px; opacity: 0.8; font-size: 12px; }
+
+.calendario-footer {
+    margin-top: 18px;
+    text-align: center;
+    opacity: 0.9;
+}
+
+@media (max-width: 980px) {
+    .calendario-wrap { grid-template-columns: 1fr; }
+    .calendario-grid, .calendario-dias, .calendario-panel { grid-column: 1; }
+}
+
+/* Contacto */
+.contacto-container {
+    max-width: 600px;
+    margin: 4rem auto;
+    padding: 3rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.contacto-container h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, #ffd700, #ffed4a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.contacto-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contacto-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-weight: 600;
+}
+
+.contacto-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.contacto-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* FONDO */
+body {
+    background-color: #0f1a20 !important;
+    background: url("/Fotos/logoFondo.png") repeat center/ 200px 200px;
+}

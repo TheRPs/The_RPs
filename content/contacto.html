@@ -1,0 +1,55 @@
+---
+title: Contacto
+---
+
+<section class="contacto-container">
+    <h1>Contacto</h1>
+    <p>Si deseas ponerte en contacto con nosotros, puedes hacerlo a través de los siguientes medios:</p>
+
+    <article class="contacto-container">
+        <h2>Formulario de Contacto</h2>
+        <p>En este formulario puedes enviar un mensaje o sugerencia a The RP's para solicitar la canción que tu quieras.</p>
+        <br><br>
+        <form action="" method="post" class="contacto-form" onsubmit="return confirm('¿Estás seguro?');">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <script>
+            (function () {
+                const form = document.querySelector('.contacto-form');
+                if (!form) return;
+
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const name = (document.getElementById('name') || {}).value || '';
+                    const message = (document.getElementById('message') || {}).value || '';
+
+                    const subject = `Contacto - ${name}`;
+                    const body = `Nombre: ${name}\n\nMensaje:\n${message}`;
+
+                    // Abre el cliente de correo del usuario con los datos
+                    window.location.href = `mailto:renpalagoak@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                });
+            })();
+        </script>
+
+    </article>
+
+    <div class="contacto-info">
+        <div class="contacto-item">
+            <i class="fas fa-envelope"></i>
+            <p>Email: <a href="mailto: renpalagoak@gmail.com" style="color: beige;">renpalagoak@gmail.com</a></p>
+        </div>
+        <div class="contacto-item">
+            <i class="fas fa-phone"></i>
+            <p>Teléfono: <a href="tel:+123456789" style="color: beige;">+123 456 789</a></p>
+        </div>
+    </div>
+</section>

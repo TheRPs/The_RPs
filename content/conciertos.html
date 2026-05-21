@@ -1,0 +1,292 @@
+---
+title: Conciertos
+---
+
+
+    <section class="conciertos calendario-page">
+        <h1>¡Vive la experiencia en directo con The RP's!</h1>
+        <p>Descubre nuestro calendario de conciertos y eventos. ¡No te pierdas la oportunidad de vernos en vivo y compartir momentos inolvidables con nosotros!</p>
+        <h2>Próximos eventos</h2>
+        <div class="eventos-proximos">
+            <article class="evento">
+                <h3>Concierto en Bilbao - 20 de Mayo</h3>
+                <p>¡No te pierdas nuestro concierto en Bilbao! Será una noche llena de energía y buena música. ¡Te esperamos!</p>
+            </article>
+
+            <article class="evento">
+                <h3>Festival de Verano en Madrid - 30 de Junio</h3>
+                <p>Únete a nosotros en el Festival de Verano en Madrid. ¡Una experiencia musical inolvidable con muchas sorpresas!</p>
+            </article>
+
+            <article class="evento">
+                <h3>Concierto en Barcelona - 15 de Julio</h3>
+                <p>¡Ven a disfrutar de una noche mágica con The RP's en Barcelona! Prepárate para cantar, bailar y vivir la música como nunca antes.</p>
+            </article>
+
+            <article class="evento">
+                <h3>Festival de Otoño en Valencia - 10 de Octubre</h3>
+                <p>El Festival de Otoño en Valencia será el escenario perfecto para que The RP's te haga vibrar con su música única. ¡No faltes!</p>
+            </article>
+        </div>
+
+
+        <h2>Calendario de Conciertos</h2>
+        <p>
+            Haz clic en un día para ver los eventos y el listado.
+        </p>
+
+        <div class="calendario-wrap" aria-label="Calendario de conciertos">
+            <div class="calendario-header">
+                <h3 class="calendario-h3" style="margin:0;">Próximos eventos</h3>
+
+                <div class="calendario-controls">
+                    <button type="button" class="btn-cal btn-cal-prev" id="prevMonth" aria-label="Mes anterior"><</button>
+                    <div class="calendario-titulo" id="monthTitle" aria-live="polite">Mes</div>
+                    <button type="button" class="btn-cal btn-cal-next" id="nextMonth" aria-label="Mes siguiente">></button>
+                </div>
+            </div>
+
+            <div class="calendario-grid" role="grid" aria-label="Vista mensual">
+                <div class="dia-nombre">Lun</div>
+                <div class="dia-nombre">Mar</div>
+                <div class="dia-nombre">Mié</div>
+                <div class="dia-nombre">Jue</div>
+                <div class="dia-nombre">Vie</div>
+                <div class="dia-nombre">Sáb</div>
+                <div class="dia-nombre">Dom</div>
+            </div>
+
+            <div class="calendario-dias" id="calendarDays" role="rowgroup"></div>
+
+            <div class="calendario-panel">
+                <h3 id="selectedDayTitle">Eventos del día</h3>
+
+                <div class="eventos-list" id="eventsList"></div>
+
+                <div class="evento-empty" id="emptyState" hidden>
+                    No hay eventos para esta fecha.
+                </div>
+
+                <!-- Formulario deshabilitado: el calendario es hardcodeado -->
+                <div class="evento-form" aria-label="Añadir evento" hidden>
+                    <h4>Añadir concierto / evento</h4>
+                    <form id="eventForm" autocomplete="off">
+                        <label>
+                            <span>Título</span>
+                            <input type="text" id="eventTitle" name="title" required maxlength="80" />
+                        </label>
+
+                        <label>
+                            <span>Fecha</span>
+                            <input type="date" id="eventDate" name="date" required />
+                        </label>
+
+                        <label>
+                            <span>Lugar</span>
+                            <input type="text" id="eventLocation" name="location" maxlength="120" />
+                        </label>
+
+                        <label>
+                            <span>Descripción</span>
+                            <textarea id="eventDescription" name="description" rows="3" maxlength="400"></textarea>
+                        </label>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-save">Guardar evento</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        (function () {
+            // Calendario hardcodeado: el usuario no puede editarlo.
+            // Aquí es donde debes añadir tus eventos:
+            // Ej:
+            //   { id: 'evt-1', title: 'Concierto en Bilbao', date: '2026-06-10', location: 'Sala Santana 27, Bilbao', description: '...' , createdAt: 0 }
+            const HARD_CODED_EVENTS = [ 
+                { id: 'evt-1', title: 'Concierto en Bilbao', date: '2026-06-10', location: 'Sala Santana 27, Bilbao', description: '¡No te pierdas nuestro concierto en Bilbao! Será una noche llena de energía y buena música. ¡Te esperamos!' , createdAt: 0 },
+                { id: 'evt-2', title: 'Festival de Verano en Madrid', date: '2026-06-10', location: 'Parque de la Ciudad, Madrid', description: 'Únete a nosotros en el Festival de Verano en Madrid. ¡Una experiencia musical inolvidable con muchas sorpresas!' , createdAt: 0 },  
+            // { id: 'evt-1', title: 'Concierto en Bilbao', date: '2026-06-10', location: 'Sala Santana 27, Bilbao', description: '...' , createdAt: 0 },
+            ];
+
+            /** @type {{id:string,title:string,date:string,location:string,description:string,createdAt:number}[]} */
+            const events = HARD_CODED_EVENTS;
+
+            const els = {
+                prevMonth: document.getElementById('prevMonth'),
+                nextMonth: document.getElementById('nextMonth'),
+                monthTitle: document.getElementById('monthTitle'),
+                calendarDays: document.getElementById('calendarDays'),
+                selectedDayTitle: document.getElementById('selectedDayTitle'),
+                eventsList: document.getElementById('eventsList'),
+                emptyState: document.getElementById('emptyState'),
+                eventDate: document.getElementById('eventDate'),
+            };
+
+            let viewYear, viewMonth; // viewMonth: 0-11
+            let selectedDate = null; // 'YYYY-MM-DD'
+
+            function pad2(n) { return String(n).padStart(2, '0'); }
+            function formatYMD(d) {
+                return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate());
+            }
+
+            function parseYMD(ymd) {
+                const [y, m, d] = ymd.split('-').map(Number);
+                return new Date(y, m - 1, d);
+            }
+
+            function getEventsForDate(ymd) {
+                return events
+                    .filter(e => e.date === ymd)
+                    .sort((a, b) => a.createdAt - b.createdAt);
+            }
+
+            function escapeHtml(s) {
+                return String(s)
+                    .replaceAll('&', '&amp;')
+                    .replaceAll('<', '<')
+                    .replaceAll('>', '>')
+                    .replaceAll('"', '"')
+                    .replaceAll("'", '&#039;');
+            }
+
+            function renderMonth() {
+                const firstOfMonth = new Date(viewYear, viewMonth, 1);
+                const lastOfMonth = new Date(viewYear, viewMonth + 1, 0);
+
+                // Lun=1 ... Dom=0 => mover para que Lun sea columna 0
+                const startDay = (firstOfMonth.getDay() + 6) % 7; // 0..6
+                const totalDays = lastOfMonth.getDate();
+
+                const monthNames = [
+                    'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+                    'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+                ];
+
+                els.monthTitle.textContent = monthNames[viewMonth] + ' ' + viewYear;
+
+                // reset
+                els.calendarDays.innerHTML = '';
+
+                const cells = [];
+                for (let i = 0; i < startDay; i++) cells.push({ type: 'empty' });
+
+                for (let day = 1; day <= totalDays; day++) {
+                    const d = new Date(viewYear, viewMonth, day);
+                    const ymd = formatYMD(d);
+                    const dayEvents = getEventsForDate(ymd);
+                    cells.push({
+                        type: 'day',
+                        day,
+                        ymd,
+                        count: dayEvents.length
+                    });
+                }
+
+                for (let i = cells.length; i % 7 !== 0; i++) cells.push({ type: 'empty' });
+
+                for (const c of cells) {
+                    if (c.type === 'empty') {
+                        const div = document.createElement('div');
+                        div.className = 'dia dia-empty';
+                        div.setAttribute('aria-hidden', 'true');
+                        els.calendarDays.appendChild(div);
+                        continue;
+                    }
+
+                    const div = document.createElement('button');
+                    div.type = 'button';
+                    div.className = 'dia';
+                    div.dataset.date = c.ymd;
+                    div.setAttribute('role', 'gridcell');
+
+                    if (selectedDate === c.ymd) div.classList.add('dia-selected');
+
+                    const dotCount = Math.min(c.count, 4);
+                    div.innerHTML = `
+                        <div class="dia-num">${c.day}</div>
+                        <div class="dia-dots" aria-label="${c.count} eventos">
+                            ${Array.from({ length: dotCount }).map(() => '<span class="dot"></span>').join('')}
+                            ${c.count > dotCount ? '<span class="dot-more">+' + (c.count - dotCount) + '</span>' : ''}
+                        </div>
+                    `;
+
+                    div.addEventListener('click', () => {
+                        selectedDate = c.ymd;
+                        els.eventDate.value = c.ymd;
+                        renderMonth();
+                        renderEventsPanel();
+                    });
+
+                    els.calendarDays.appendChild(div);
+                }
+            }
+
+            function renderEventsPanel() {
+                if (!selectedDate) {
+                    const today = new Date();
+                    selectedDate = formatYMD(today);
+                }
+
+                els.selectedDayTitle.textContent = 'Eventos del día: ' + selectedDate;
+
+                const list = getEventsForDate(selectedDate);
+                els.eventsList.innerHTML = '';
+
+                if (list.length === 0) {
+                    els.emptyState.hidden = false;
+                    return;
+                }
+
+                els.emptyState.hidden = true;
+
+                for (const e of list) {
+                    const item = document.createElement('div');
+                    item.className = 'evento-item';
+                    item.innerHTML = `
+                        <div class="evento-main">
+                            <div class="evento-title">${escapeHtml(e.title)}</div>
+                            ${e.location ? `<div class="evento-meta"><span class="meta-label">Lugar:</span> ${escapeHtml(e.location)}</div>` : ''}
+                            ${e.description ? `<div class="evento-desc">${escapeHtml(e.description)}</div>` : ''}
+                        </div>
+                    
+                    `;
+
+                    els.eventsList.appendChild(item);
+                }
+
+            }
+
+            function init() {
+                const now = new Date();
+                viewYear = now.getFullYear();
+                viewMonth = now.getMonth();
+
+                selectedDate = formatYMD(now);
+                els.eventDate.value = selectedDate;
+
+                renderMonth();
+                renderEventsPanel();
+
+                els.prevMonth.addEventListener('click', () => {
+                    viewMonth -= 1;
+                    if (viewMonth < 0) { viewMonth = 11; viewYear -= 1; }
+                    renderMonth();
+                });
+
+                els.nextMonth.addEventListener('click', () => {
+                    viewMonth += 1;
+                    if (viewMonth > 11) { viewMonth = 0; viewYear += 1; }
+                    renderMonth();
+                });
+
+            }
+
+            init();
+        })();
+    </script>
+
