@@ -18,7 +18,7 @@ body {
         rgba(0, 0, 0, 0.6),
         rgba(255, 255, 0,0.4)
     ),
-    url("Fotos/fotoprincipal.jpeg");
+    url("/Fotos/fotoprincipal.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -262,7 +262,7 @@ body {
         rgba(0, 0, 0, 0.6),
         rgba(255, 255, 0,0.4)
     ),
-    url("Fotos/fotoprincipal.jpeg");
+    url("/Fotos/fotoprincipal.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
