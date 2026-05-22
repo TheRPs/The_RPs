@@ -87,6 +87,76 @@ body {
     cursor: pointer;
 }
 
+/*MENU RESPONSIVE*/
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .logo {
+        font-size: 24px;
+    }
+    .menu {
+        flex-direction: column;
+        gap: 15px;
+        margin-left: 60%;
+        align-items: flex-end;
+        border: 1px solid white;
+        border-radius: 20px;
+        background: rgba(0,0,0,0.5);
+        padding: 10px;        
+        font-size: 7px;
+    }
+
+    .menu > *:hover {
+        background-color: #d3cbcb;
+        color: #333;
+        transform: translateY(-3px);
+    }
+
+    .hero {
+        top: 30%;
+        left: 20px;
+        font-size: smaller;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        top: 20%;
+        left: 15px;
+        font-size: 14px;
+    }
+    .hero img {
+        width: 50px;
+        height: auto;
+    }
+    .menu {
+        flex-direction: column;
+        gap: 15px;
+        margin-left: 60%;
+        align-items: flex-end;
+        border: 1px solid white;
+        border-radius: 20px;
+        background: rgba(0,0,0,0.5);
+        padding: 10px;
+        font-size: 7px;
+    }
+
+    .menu > *:hover {
+        background-color: #d3cbcb;
+        color: #333;
+        transform: translateY(-3px);
+    }
+}
+
+@media (max-width: 1024px) {
+    .header {
+        height: 50vh;
+        background-position: top;
+    }
+}
+
 /* PRENSA */
 .prensa {
     text-align: center;
