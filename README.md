@@ -42,7 +42,7 @@ El calendario se irá actualizando periodicamente e irá acorde a las noticias p
 
 La galería de The RP’s está proporcionada por Instagram. La información se actualiza a la vez que la cuenta oficial de Instagram de The RP’s.
 
-# 📞 Contacto
+## 📞 Contacto
 
 Este apartado permite al usuario mandar un email directamente a Th RP’s:
 
