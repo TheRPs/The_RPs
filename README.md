@@ -18,6 +18,41 @@ El objetivo del inicio es transmitir quiénes somos y por qué sonamos como sona
 
 ---
 
+## 👥 Conócenos
+
+El apartado de conócenos presenta a toda la banda de The RP’s:
+
+- Una pequeña introducción que explica todo el alma de la banda de rock.
+- Tarjetas de presentación de todos los miembros de la banda.
+- Un apartado adicional que presenta a los programadores.
+
+Todas las tarjetas de presentación incluyen una descripción clara del valor e los miembros y su especialidad.
+
+## 🏟️ Conciertos
+
+En conciertos se muestra todo el calendario de eventos de The RP’s:
+
+- El calendario es interactivo y tiene el formato corecto de los meses de todos los años.
+- Los eventos van marcados cada uno por un punto naranjo en el día en el que se ubica.
+- Al interactuar con un evento muestra a la derecha del calendario toda la información adjunta.
+
+El calendario se irá actualizando periodicamente e irá acorde a las noticias presentadas en inicio y la información aportada por Instagram.
+
+## 📸 Galería
+
+La galería de The RP’s está proporcionada por Instagram. La información se actualiza a la vez que la cuenta oficial de Instagram de The RP’s.
+
+# 📞 Contacto
+
+Este apartado permite al usuario mandar un email directamente a Th RP’s:
+
+- EL hueco de nombre permite saber al administrador del correo de The RP’s saber quién eres.
+- El hueco de mensaje sirve para que puedas mandarle el mensaje que quieras a The RP’s.
+
+Al pulsar enviar la página web abre tu aplicación de correos predeterminado con la información que tu hayas metido en el formulario.
+
+Pulsar enviar no envia directamente el correo, se debe pulsar manualmente en tu aplicación de correos.
+
 ## 🛍️ Merch
 
 La sección de Merch ofrece productos oficiales de The RP’s, diseñados para fans que quieren llevar el rock en su día a día.
@@ -35,7 +70,11 @@ La página está pensada para ser visual, directa y fácil de usar.
 
 ## 📁 Estructura del proyecto
 
-- `/index.html` — Página de inicio  
+- `/index.html` — Página de inicio
+- `/conocenos.html` — Página de presentación de la banda
+- `/conciertos.html` — Página de conciertos con un calendario
+- `/fotos.html` — Página de galería de Instagram
+- `/contacto.html` — Página de contacto
 - `/merch.html` — Página de merchandising  
 - `/assets/` — Imágenes, logos y recursos visuales  
 - `/styles/` — Hojas de estilo  
@@ -53,5 +92,5 @@ Este repositorio contiene el código de su web oficial, creada para conectar con
 ## 📬 Contacto
 
 Para colaboraciones, prensa o contratación:  
-**correo@ejemplo.com**
+**renpalagoak@gmail.com**
 
