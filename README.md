@@ -28,6 +28,8 @@ El apartado de conócenos presenta a toda la banda de The RP’s:
 
 Todas las tarjetas de presentación incluyen una descripción clara del valor e los miembros y su especialidad.
 
+---
+
 ## 🏟️ Conciertos
 
 En conciertos se muestra todo el calendario de eventos de The RP’s:
@@ -38,9 +40,13 @@ En conciertos se muestra todo el calendario de eventos de The RP’s:
 
 El calendario se irá actualizando periodicamente e irá acorde a las noticias presentadas en inicio y la información aportada por Instagram.
 
+---
+
 ## 📸 Galería
 
 La galería de The RP’s está proporcionada por Instagram. La información se actualiza a la vez que la cuenta oficial de Instagram de The RP’s.
+
+---
 
 ## 📞 Contacto
 
@@ -52,6 +58,8 @@ Este apartado permite al usuario mandar un email directamente a Th RP’s:
 Al pulsar enviar la página web abre tu aplicación de correos predeterminado con la información que tu hayas metido en el formulario.
 
 Pulsar enviar no envia directamente el correo, se debe pulsar manualmente en tu aplicación de correos.
+
+---
 
 ## 🛍️ Merch
 
